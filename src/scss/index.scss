@@ -1,0 +1,8 @@
+@import "theme";//define the theme
+@import "boostrap";//partial load bootstrap css
+//@import '~bootstrap/scss/bootstrap'; // import all bootstrap css
+@import "bootstrap-vue";//partial load bootstrap-vue css
+//@import '~bootstrap-vue/src/index.scss'; // import all bootstrap-vue css
+@import "global";//overwrite some global variables
+
+//write your customized scss here

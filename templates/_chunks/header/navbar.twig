@@ -1,0 +1,5 @@
+<b-navbar-nav class="d-lg-flex d-none ml-auto">
+    {% for entry in craft.entries({section:"siteContent"}).all() %}
+        <b-nav-item href="{{ url(entry.uri=="__home__"?"":entry.uri) }}">{{ entry.title }}</b-nav-item>
+    {% endfor %}
+</b-navbar-nav>

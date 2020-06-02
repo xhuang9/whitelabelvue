@@ -1,0 +1,45 @@
+{# Craft Global Value #}
+{% set defaultUrl = getDefaultUrl() %}
+{% set logo = system.logo.one() | default(craft.assets.filename("error.jpg").one()) %}
+{% set placeHolder = system.placeHolder.one() | default(logo) %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>{{ siteName }}</title>
+
+  {{ craft.twigpack.includeCssModule("app.css", true) }}
+  <link rel="icon" href="{{ system.favicon.one().url | default(logo.url) }}">
+</head>
+
+<body class="bg-gray">
+  <script type="application/javascript">
+    window.defaultUrl = "{{ defaultUrl }}";
+    window.siteUrl = "{{ siteUrl }}";
+    window.csrfTokenName  = "{{ craft.app.config.general.csrfTokenName }}";
+    window.csrfTokenValue = "{{ craft.app.request.csrfToken }}";
+    window.placeHolder = "{{ placeHolder }}";
+    window.currentPage = "{{ craft.app.request.pathInfo }}";
+  </script>
+
+  <div id="app" v-lazy-container="{ selector: 'img' }">
+
+    {% set info = {
+      craftVersion: craft.app.getVersion(),
+      environment: getenv('ENVIRONMENT')
+    } %}
+
+    {% block body %}{% endblock %}
+    {% block foot %}{% endblock %}
+
+  </div>
+
+  {{ craft.twigpack.includeSafariNomoduleFix() }}
+  {{ craft.twigpack.includeJsModule("app.js", true) }}
+  {{ craft.twigpack.includeJsModule("chunk-vendors.js", true) }}
+
+</body>
+</html>

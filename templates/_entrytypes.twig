@@ -1,0 +1,6 @@
+{#
+    This twig file is used to route request from "Pages" section to use the proper twig template under "_entrytypes" folder
+    e.g. your-site.com will redirect to homeTemplate.twig if under "Pages" section you have an entry using slug "__home__",
+    and set to use entry type with handle of "homeTemplate".
+#}
+{% include "_entrytypes/" ~ entry.type %}

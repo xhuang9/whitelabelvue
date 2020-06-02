@@ -1,0 +1,11 @@
+{
+  "app.css": "/dist/css/app.7f0829fc.css",
+  "app.js": "/dist/js/app.88d6309f.js",
+  "app.css.map": "/dist/css/app.7f0829fc.css.map",
+  "app.js.map": "/dist/js/app.88d6309f.js.map",
+  "chunk-vendors.css": "/dist/css/chunk-vendors.512c71cd.css",
+  "chunk-vendors.js": "/dist/js/chunk-vendors.62361e2a.js",
+  "chunk-vendors.css.map": "/dist/css/chunk-vendors.512c71cd.css.map",
+  "chunk-vendors.js.map": "/dist/js/chunk-vendors.62361e2a.js.map",
+  "index.html": "/dist/index.html"
+}

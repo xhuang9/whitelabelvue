@@ -1,0 +1,20 @@
+{% set sliders = [
+  {
+    img: "http://placehold.it/2000x1000",
+    headerTitle: "Title One",
+    description: "Description One"
+  },
+  {
+    img: "http://placehold.it/2000x1000",
+    headerTitle: "Title Two",
+    description: "Description Two"
+  }] %}
+
+<slider>
+  {% for slider in sliders %}
+    <div class="slider-container" style="background: url('{{ slider.img }}') center;height: 100%;width: 100%;">
+      <h1 class="text-5xl text-primary">{{ slider.headerTitle }}</h1>
+      <p>{{ slider.description }}</p>
+    </div>
+  {% endfor %}
+</slider>
